@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+  <a-scene>
     <!--The Assets-->
     <a-assets>
         <a-asset-item id="home-ply" src="models/home.ply"></a-asset-item>
@@ -17,15 +17,9 @@
         <img id="store" src="img/store.png">
         <img id="home" src="img/home.png">
         <img id="meeting" src="img/meeting.png">
-        <a-mixin id="corn-ply" src="models/plants/corn.ply"></a-mixin>
-        <a-mixin id="rice-ply" src="models/plants/rice.ply"></a-mixin>
-        <a-mixin id="blueflower-ply" src="models/plants/blueflower.ply"></a-mixin>
-        <a-mixin id="orchid-ply" src="models/plants/orchid.ply"></a-mixin>
-        <a-mixin id="redflower-ply" src="models/plants/redflower.ply"></a-mixin>
     </a-assets>
 
-    <!--The placement of model-->
-    
+    <!--The placement of model-->   
     <a-entity camera position="2 1 10" look-controls wasd-controls>
       <a-entity cursor="fuse: true; fuseTimeout: 1000"
                 position="0 0 -1"
@@ -72,38 +66,6 @@
    	<a-box color="white" onclick="setScene1()"></a-box>
    	<a-light id="ambient1" type="ambient" color="#4f6487" >
    </a-entity>
-<!--
-    <a-entity id="scene1" >
-      <a-sky color="#ffffff"></a-sky>
-      <a-box color="red" onclick="setScene2()"> </a-box>
-      <a-light id="ambient1" type="ambient" color="#4f6487" >
-        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
-      </a-light>
-    </a-entity>
--->
-<!--
-       <a-entity id="scene2" visible="false">
-        
-        <a-sky color="#aaaaaa"></a-sky>
-        <a-box color="green" position="0 2 -5"> </a-box>
-        <a-box color="yellow" position="5 0 -5" onclick="setScene1()"> </a-box>
-        <a-box color="blue" position="0 0 -3"> </a-box>
-        <a-light id="ambient2" type="ambient" color="#FFFFFF" >
-        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
-        </a-light>
-       </a-entity>
-   -->
-<!--
-    <a-entity id="scene2" visible="false">
-      <a-sky color="#aaaaaa"></a-sky>
-      <a-box color="green" position="0 2 -5"> </a-box>
-      <a-box color="yellow" position="5 0 -5" onclick="setScene1()"> </a-box>
-      <a-box color="blue" position="0 0 -3"> </a-box>
-      <a-light id="ambient2" type="ambient" color="#FFFFFF" >
-        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
-      </a-light>
-    </a-entity>
-  -->
   </a-scene>
 
   <script type="text/javascript"> 
