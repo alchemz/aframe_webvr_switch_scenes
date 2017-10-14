@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <title>A-Frame Switch Scenes</title>
+ <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="js/aframe.js"></script>
+</head>
+
+<body>
+  <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+    <!--The Assets-->
+    <a-assets>
+        <a-asset-item id="home-ply" src="models/home.ply"></a-asset-item>
+        <img id="sky" src="https://farm5.staticflickr.com/4465/37557293182_d84060aad7_k.jpg">
+        <img id="farm" src="img/farm.png">
+        <img id="store" src="img/store.png">
+        <img id="home" src="img/home.png">
+        <img id="meeting" src="img/meeting.png">
+        <a-mixin id="corn-ply" src="models/plants/corn.ply"></a-mixin>
+        <a-mixin id="rice-ply" src="models/plants/rice.ply"></a-mixin>
+        <a-mixin id="blueflower-ply" src="models/plants/blueflower.ply"></a-mixin>
+        <a-mixin id="orchid-ply" src="models/plants/orchid.ply"></a-mixin>
+        <a-mixin id="redflower-ply" src="models/plants/redflower.ply"></a-mixin>
+    </a-assets>
+
+    <!--The placement of model-->
+    
+    <a-entity camera position="2 1 10" look-controls wasd-controls>
+      <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                position="0 0 -1"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                material="color: black; shader: flat">
+        <a-animation begin="click" easing="ease-in" attribute="scale"
+                     fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
+                     fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>
+      </a-entity>
+    </a-entity>
+
+  <a-entity id="scene1">
+   <a-sky src="#sky"></a-sky>
+    <a-box color="red" position="-6 0 0" onclick="setSceneFarm()"> </a-box>
+     <a-box color="yellow" position="-2 0 0" onclick="setSceneStore()"> </a-box>
+      <a-box color="blue" position="2 0 0" onclick="setSceneMeeting()"> </a-box>
+       <a-box color="green" position="6 0 0" onclick="setSceneHome()"> </a-box>
+      <a-light id="ambient1" type="ambient" color="#4f6487" >
+        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+      </a-light>
+   </a-entity>
+
+   <a-entity id="sceneFarm" visible="false">
+   	<a-sky src="#farm"></a-sky>
+   	<a-box color="white" position="0 0 0" onclick="setScene1()"></a-box>
+   	<a-light id="ambient1" type="ambient" color="#4f6487" >
+   </a-entity>
+
+   <a-entity id="sceneStore" visible="false">
+   	<a-sky src="#store"></a-sky>
+   	<a-box color="white" onclick="setScene1()"></a-box>
+   	<a-light id="ambient1" type="ambient" color="#4f6487" >
+   </a-entity>
+
+   <a-entity id="sceneMeeting" visible="false">
+   	<a-sky src="#meeting"></a-sky>
+   	<a-box color="white" onclick="setScene1()"></a-box>
+   	<a-light id="ambient1" type="ambient" color="#4f6487" >
+   </a-entity>
+
+   <a-entity id="sceneHome" visible="false">
+   	<a-sky src="#home"></a-sky>
+   	<a-box color="white" onclick="setScene1()"></a-box>
+   	<a-light id="ambient1" type="ambient" color="#4f6487" >
+   </a-entity>
+<!--
+    <a-entity id="scene1" >
+      <a-sky color="#ffffff"></a-sky>
+      <a-box color="red" onclick="setScene2()"> </a-box>
+      <a-light id="ambient1" type="ambient" color="#4f6487" >
+        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+      </a-light>
+    </a-entity>
+-->
+<!--
+       <a-entity id="scene2" visible="false">
+        
+        <a-sky color="#aaaaaa"></a-sky>
+        <a-box color="green" position="0 2 -5"> </a-box>
+        <a-box color="yellow" position="5 0 -5" onclick="setScene1()"> </a-box>
+        <a-box color="blue" position="0 0 -3"> </a-box>
+        <a-light id="ambient2" type="ambient" color="#FFFFFF" >
+        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+        </a-light>
+       </a-entity>
+   -->
+<!--
+    <a-entity id="scene2" visible="false">
+      <a-sky color="#aaaaaa"></a-sky>
+      <a-box color="green" position="0 2 -5"> </a-box>
+      <a-box color="yellow" position="5 0 -5" onclick="setScene1()"> </a-box>
+      <a-box color="blue" position="0 0 -3"> </a-box>
+      <a-light id="ambient2" type="ambient" color="#FFFFFF" >
+        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+      </a-light>
+    </a-entity>
+  -->
+  </a-scene>
+
+  <script type="text/javascript"> 
+  function setScene1() {
+    document.getElementById('scene1').setAttribute('visible', 'true')
+    document.getElementById('sceneFarm').setAttribute('visible', 'false')
+    document.getElementById('sceneStore').setAttribute('visible', 'false')
+    document.getElementById('sceneMeeting').setAttribute('visible', 'false')
+    document.getElementById('sceneHome').setAttribute('visible', 'false')
+  }
+   function setSceneFarm() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneFarm').setAttribute('visible', 'true')
+  }
+
+   function setSceneStore() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneStore').setAttribute('visible', 'true')
+  }
+
+   function setSceneMeeting() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneMeeting').setAttribute('visible', 'true')
+  }
+
+   function setSceneHome() {
+    document.getElementById('scene1').setAttribute('visible', 'false')
+    document.getElementById('sceneHome').setAttribute('visible', 'true')
+  }
+  </script>
+
+</body>
+</html>
