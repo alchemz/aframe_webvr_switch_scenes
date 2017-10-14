@@ -6,4 +6,4 @@ www.lingdebug.me
 
 Supported Browsers
 ------------------
-Microsoft Edge, Mozilla Firefox
+Microsoft Edge, Mozilla Firefox, Chrome
