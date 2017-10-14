@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>A-Frame Switch Scenes</title>
- <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script src="js/aframe.js"></script>
 </head>
 
@@ -32,14 +32,14 @@
       </a-entity>
     </a-entity>
 
-  <a-entity id="scene1">
-   <a-sky src="#sky"></a-sky>
-    <a-box color="red" position="-6 0 0" onclick="setSceneFarm()"> </a-box>
-     <a-box color="yellow" position="-2 0 0" onclick="setSceneStore()"> </a-box>
+    <a-entity id="scene1">
+      <a-sky src="#sky"></a-sky>
+      <a-box color="red" position="-6 0 0" onclick="setSceneFarm()"> </a-box>
+      <a-box color="yellow" position="-2 0 0" onclick="setSceneStore()"> </a-box>
       <a-box color="blue" position="2 0 0" onclick="setSceneMeeting()"> </a-box>
-       <a-box color="green" position="6 0 0" onclick="setSceneHome()"> </a-box>
+      <a-box color="green" position="6 0 0" onclick="setSceneHome()"> </a-box>
       <a-light id="ambient1" type="ambient" color="#4f6487" >
-        <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
+      <a-animation attribute="intensity" begin="aaa" from="0" to="1" delay="100" dur="1000" fill="both"></a-animation>
       </a-light>
    </a-entity>
 
