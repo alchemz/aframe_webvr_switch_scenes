@@ -5,7 +5,7 @@ Results
 
 Live Demo
 ----
-www.lingdebug.me
+http://alchemyzons.com/VR_index.html
 
 Supported Browsers
 ------------------
